@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-api
+  name: msa-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-api
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-api
+    spec:
+      containers:
+        - env:
+            - name: ES_CREDENTIALS
+              value: c3VwZXJ1c2VyOnheWnl1R002fnU9K2ZZMkc=
+          image: openmsa/openmsa:msa2-api-2.6.0GA-f37513449465f87283dccc55ab7d04930bf90acf
+          livenessProbe:
+            exec:
+              command:
+                - curl --fail http://localhost:8480
+          name: msa-api
+          ports:
+            - containerPort: 8480
+            - containerPort: 8787
+          resources: {}
+          volumeMounts:
+            - mountPath: /opt/ubi-jentreprise/generated/conf
+              name: msa-api
+            - mountPath: /opt/fmc_entities
+              name: msa-entities
+            - mountPath: /opt/fmc_repository
+              name: msa-repository
+            - mountPath: /opt/rrd
+              name: rrd-repository
+            - mountPath: /opt/devops/
+              name: msa-dev
+            - mountPath: /opt/wildfly/logs/
+              name: msa-api-logs
+      restartPolicy: Always
+      volumes:
+        - name: msa-api
+          persistentVolumeClaim:
+            claimName: msa-api
+        - name: msa-entities
+          persistentVolumeClaim:
+            claimName: msa-entities
+        - name: msa-repository
+          persistentVolumeClaim:
+            claimName: msa-repository
+        - name: rrd-repository
+          persistentVolumeClaim:
+            claimName: rrd-repository
+        - name: msa-dev
+          persistentVolumeClaim:
+            claimName: msa-dev
+        - name: msa-api-logs
+          persistentVolumeClaim:
+            claimName: msa-api-logs
+status: {}

@@ -1,0 +1,97 @@
+#!/bin/bash
+
+
+function retag(){
+    FILE_NAME=$1
+    TAG_NAME=$2
+    PUSH_IMAGES=$3
+
+    OUTPUT_YML="${TAG_NAME}-"$(basename ${FILE_NAME})
+
+    if [ -f "${OUTPUT_YML}" ]; then
+        rm -f "${OUTPUT_YML}"
+    fi
+
+    cp -v "${FILE_NAME}" "${OUTPUT_YML}"
+
+    for i in $(grep image ${FILE_NAME}| grep ubiqube/msa2); do
+        if ! echo ${i} | grep image -q  ; then
+            IMAGE_SUFFIX=$(echo $i | cut -f2 -d/ | cut -f1 -d: )
+            IMAGE_NAME="openmsa/openmsa:"${IMAGE_SUFFIX}-${TAG_NAME}-$(echo $i | cut -f2 -d:)
+            echo ""
+            echo "========================================================"
+            echo "Update image "$(echo $i | cut -f1 -d:)" before tag..."
+
+            docker pull --quiet ${i}
+
+            echo "-----"
+            echo "Tag image ${i} to ${IMAGE_NAME}"
+            echo "-----"
+
+            docker tag ${i} ${IMAGE_NAME}
+
+            if [ ${PUSH_IMAGES} = "no" ]; then
+                echo "To push image, use the command bellow:"
+                echo "docker push ${IMAGE_NAME}"
+                echo "========================================================"
+            fi
+
+            if [ ${PUSH_IMAGES} = "yes" ]; then
+                echo "Pushing image..."
+                docker push ${IMAGE_NAME}
+                echo "========================================================"
+            fi
+            sed -i "s,${i},${IMAGE_NAME}," "${OUTPUT_YML}"
+        fi
+    done
+}
+
+function usage(){
+    echo "Usage:"
+    echo "./create_image -f <docker-compose.yml> -t TAG_NAME [-p]"
+    echo ""
+    echo "-f <docker-compose.yml> - file where to get tag files names"
+    echo "-t TAG_NAME - Name of that TAG that will be used"
+    echo "-p (optional) - Push after retag"
+}
+
+PUSH_IMAGES="no"
+
+optstring=":h:f:t:p"
+
+while getopts ${optstring} arg; do
+    case ${arg} in
+        h)
+            usage
+            exit 0
+            ;;
+
+        f)
+            FILE_NAME="${OPTARG}"
+            ;;
+
+        t)
+            TAG_NAME="${OPTARG}"
+            ;;
+
+        p)
+            PUSH_IMAGES="yes"
+            ;;
+
+        :)
+            echo "Missing argument"
+            echo
+            usage
+            exit 1
+            ;;
+
+        ?)
+            echo "Invalid option: -${OPTARG}"
+            echo
+            usage
+            exit 1
+            ;;
+    esac
+done
+
+retag "${FILE_NAME}" "${TAG_NAME}" "${PUSH_IMAGES}"

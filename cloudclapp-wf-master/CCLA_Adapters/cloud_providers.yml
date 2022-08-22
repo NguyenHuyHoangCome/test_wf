@@ -1,0 +1,84 @@
+aws:
+  displayName: AWS
+  category: Public Cloud
+  logo: Process/cloudclapp-wf/CCLA_Adapters/logos/aws.logo
+  credentials_required : ['aws_access_key', 'aws_secret_key']
+  services:
+    eks:
+      displayName: Elastic Container Service for Kubernetes
+      imageType: docker
+      logo: Process/cloudclapp-wf/CCLA_Adapters/logos/aws_eks.logo
+      workflow:
+        env: Process/cloudclapp-wf/Provision_an_EKS_Cluster__AWS_/Provision_an_EKS_Cluster__AWS_
+        envImport: Process/cloudclapp-wf/Provision_an_EKS_Cluster__AWS_/Provision_an_EKS_Cluster__AWS_
+        appsDeployment: Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Provision_Apps_EKS_Cluster
+        scanApp: Process/cloudclapp-wf/Scan_a_App_Container_/Scan_a_App_Container_.xml
+        scanWebApp: Process/cloudclapp-wf/Scan_a_WebApp/Scan_a_WebApp
+    ec2:
+      displayName: Elastic Compute Cloud (EC2)
+      imageType: vm
+      logo: Process/cloudclapp-wf/CCLA_Adapters/logos/aws_ec2.logo
+      workflow:
+        env: Process/cloudclapp-wf/Provision_an_EC2_Env__AWS_/Provision_an_EC2_Env__AWS_
+        appsDeployment: Process/cloudclapp-wf/Provision_VM_Apps_EC2_Vpc__AWS_/Provision_VM_Apps_EC2_Vpc__AWS
+        scanApp: Process/cloudclapp-wf/Scan_a_App_Container_/Scan_a_App_Container_.xml
+        scanWebApp: Process/cloudclapp-wf/Scan_a_WebApp/Scan_a_WebApp
+#    ecs:
+#      displayName: Elastic Container Service
+#      logo: Process/cloudclapp-wf/CCLA_Adapters/logos/aws_ecs.logo
+#      workflow:
+#        env:
+#        appsDeployment:
+azure:
+  displayName: AZURE
+  category: Public Cloud
+  logo: Process/cloudclapp-wf/CCLA_Adapters/logos/azure.logo
+  credentials_required : ['service_principal_client_id', 'service_principal_client_secret','service_principal_subscription_id','service_principal_tenant_id']
+  services:
+    aks:
+      displayName: Azure Kubernetes Service
+      imageType: docker
+      logo: Process/cloudclapp-wf/CCLA_Adapters/logos/azure_aks.logo
+      workflow:
+        env: Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Provision_an_AKS_Cluster__AZURE_
+        envImport: Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Provision_an_AKS_Cluster__AZURE_
+        appsDeployment: Process/cloudclapp-wf/Provision_Apps_AKS_Cluster/Provision_Apps_AKS_Cluster
+        scanApp: Process/cloudclapp-wf/Scan_a_App_Container_/Scan_a_App_Container_.xml
+        scanWebApp: Process/cloudclapp-wf/Scan_a_WebApp/Scan_a_WebApp
+gcp:
+  displayName: Google Cloud Platform
+  category: Public Cloud
+  logo: Process/cloudclapp-wf/CCLA_Adapters/logos/gcp.logo
+  credentials_required: ['gcp_service_account_email', 'gcp_private_key_id', 'gcp_private_key', 'gcp_client_id']
+  services:
+    gke:
+      displayName: Google Kubernetes Engine
+      imageType: docker
+      logo: Process/cloudclapp-wf/CCLA_Adapters/logos/gcp_gke.logo
+      workflow:
+        env: Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Provision_an_GKE_Cluster__GCP_
+        envImport: Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Provision_an_GKE_Cluster__GCP_
+        appsDeployment: Process/cloudclapp-wf/Provision_Apps_GKE_Cluster/Provision_Apps_GKE_Cluster
+        scanApp: Process/cloudclapp-wf/Scan_a_App_Container_/Scan_a_App_Container_.xml
+        scanWebApp: Process/cloudclapp-wf/Scan_a_WebApp/Scan_a_WebApp
+#kubernetes:
+  #displayName: Kubernetes
+  #category: Private Cloud
+  #logo: Process/cloudclapp-wf/CCLA_Adapters/logos/kubernetes.logo
+  #services:
+    #kubernetes:
+      #displayName: Kubernetes
+      #logo: Process/cloudclapp-wf/CCLA_Adapters/logos/kubernetes.logo
+      #workflow:
+        #envImport: Process/cloudclapp-wf/Import_a_K8_platform/Process_Import_K8
+#docker:
+#  displayName: Docker
+#  category: Private Cloud
+#  logo: Process/cloudclapp-wf/CCLA_Adapters/logos/docker.logo
+#  services:
+#   docker_host:
+#      displayName: Docker Host
+#      logo: Process/cloudclapp-wf/CCLA_Adapters/logos/docker.logo
+#      workflow:
+#        env:
+#        appsDeployment:

@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cmap-nginx
+  labels:
+    k8s-app: nginx
+data:
+  my-web-app.conf: |-
+{{ tpl (.Files.Get "files/my-web-app.conf") . | indent 4 }}

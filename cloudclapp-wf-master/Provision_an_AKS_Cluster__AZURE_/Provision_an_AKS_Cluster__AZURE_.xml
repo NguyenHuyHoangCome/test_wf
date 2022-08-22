@@ -1,0 +1,106 @@
+<ObjectDefinition>
+  <variables frozen="0">
+    <variable displayName="Service Principal Client Id" name="params.service_principal_client_id" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="Service Principal Client Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_client_id" selectorValue="true" startIncrement="0" type="String"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="Service Principal Client Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_client_id" selectorValue="false" startIncrement="0" type="String"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Service Principal Client Secret" name="params.service_principal_client_secret" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="Service Principal Client Secret" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_client_secret" selectorValue="true" startIncrement="0" type="Password"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="Service Principal Client Secret" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_client_secret" selectorValue="false" startIncrement="0" type="Password"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Service Principal Subscription Id" name="params.service_principal_subscription_id" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="Service Principal Subscription Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_subscription_id" selectorValue="true" startIncrement="0" type="String"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="Service Principal Subscription Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_subscription_id" selectorValue="false" startIncrement="0" type="String"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Service Principal Tenant Id" name="params.service_principal_tenant_id" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="Service Principal Tenant Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_tenant_id" selectorValue="true" startIncrement="0" type="String"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="Service Principal Tenant Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.service_principal_tenant_id" selectorValue="false" startIncrement="0" type="String"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Use Orgnanisation Cloud Credentials" name="params.use_org_cloud_credentials" startIncrement="0" type="Boolean" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="true" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Access K8s Dashboard" name="params.access_k8s_dashboard" startIncrement="0" type="Link" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="6" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Status" name="params.cluster_status" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="6" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="key" name="params.tags.0.key" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="300" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <sections>
+        <sections>Tags</sections>
+      </sections>
+    </variable>
+    <variable displayName="value" name="params.tags.0.value" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="300" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <sections>
+        <sections>Tags</sections>
+      </sections>
+    </variable>
+  </variables>
+  <example/>
+  <process name="Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV">
+    <displayName>New fresh ENV</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <allowSchedule>false</allowSchedule>
+    <task name="Task_Define_Infrastructrure_with_Terraform_Resources.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV/Tasks</processPath>
+      <displayName>Create TF Workspace</displayName>
+    </task>
+    <task name="Task_Set_Azure_login_informations.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV/Tasks</processPath>
+      <displayName>Set TF variables values</displayName>
+    </task>
+    <task name="Task_Provision_an_AKS_Cluster__AZURE___Initialize_Terraform_workspace.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV/Tasks</processPath>
+      <displayName>Initialize TF Workspace</displayName>
+    </task>
+    <task name="Task_Provision_the_AKS_cluster.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV/Tasks</processPath>
+      <displayName>Provision AKS cluster</displayName>
+    </task>
+    <task name="Task_Create_AKS_corresponding_ME.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV/Tasks</processPath>
+      <displayName>Create AKS Cluster Managed Entity</displayName>
+    </task>
+    <task name="Task_Configure_kubectl.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Provision_New_fresh_ENV/Tasks</processPath>
+      <displayName>Get AKS Cluster Dashboard</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Tear_Down_ENV">
+    <displayName>Tear Down</displayName>
+    <type>DELETE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Terminate_AKS_cluster.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Tear_Down_ENV/Tasks</processPath>
+      <displayName>Terminate AKS cluster</displayName>
+    </task>
+    <task name="Task_Delete_AKS_cluster_managed_entity.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Tear_Down_ENV/Tasks</processPath>
+      <displayName>Delete AKS cluster managed entity</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Get_Status">
+    <displayName>Get Status</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_get_cluster_status.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_AKS_Cluster__AZURE_/Process_Get_Status/Tasks</processPath>
+      <displayName>get cluster status</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description>This workflow allows to generate and/or provision Azure Kubernetes Service (AKS) cluster(s) and containerized applications on Azure.</description>
+    <displayField>service_id</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name>[ENV] Provision an AKS Cluster (AZURE)</name>
+    <group>Cloud|INFRA</group>
+  </information>
+</ObjectDefinition>

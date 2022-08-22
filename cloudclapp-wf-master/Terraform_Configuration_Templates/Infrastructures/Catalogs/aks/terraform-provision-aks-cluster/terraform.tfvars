@@ -1,0 +1,4 @@
+clientId     = ""
+clientSecret = ""
+subscriptionId = ""
+tenantId = ""

@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:80",
+  "video": true,
+  "defaultCommandTimeout": 10000,
+  "viewportWidth": 1400
+}

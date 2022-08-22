@@ -1,0 +1,42 @@
+<ObjectDefinition>
+  <variables frozen="0"/>
+  <example/>
+  <process name="Process/cloudclapp-wf/Import_a_K8_platform/Process_Import_K8">
+    <displayName>Import K8</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Create_Environment.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Import_a_K8_platform/Process_Import_K8/Tasks</processPath>
+      <displayName>Create Environment</displayName>
+    </task>
+    <task name="Task_Attach_MS_and_Synchronise.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Import_a_K8_platform/Process_Import_K8/Tasks</processPath>
+      <displayName>Attach MS and Synchronise</displayName>
+    </task>
+    <task name="Task_Extract_Application_from_pods.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Import_a_K8_platform/Process_Import_K8/Tasks</processPath>
+      <displayName>Extract Application from pods</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Import_a_K8_platform/Process_Unset_K8">
+    <displayName>Unset K8</displayName>
+    <type>DELETE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Unset_K8__without_destroying_it.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Import_a_K8_platform/Process_Unset_K8/Tasks</processPath>
+      <displayName>Unset K8, without destroying it</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description>Import an existing K8 running on a private cloud</description>
+    <displayField>service_id</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name>[ENV] Import a K8 platform</name>
+    <group>Cloud|INFRA</group>
+  </information>
+</ObjectDefinition>

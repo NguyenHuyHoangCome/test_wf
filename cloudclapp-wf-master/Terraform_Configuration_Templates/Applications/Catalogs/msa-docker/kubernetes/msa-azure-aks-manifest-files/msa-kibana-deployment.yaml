@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-kibana
+  name: msa-kibana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-kibana
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-kibana
+    spec:
+      containers:
+        - env:
+            - name: ELASTICSEARCH_HOSTS
+              value: http://msa-es:9200
+            - name: ELASTICSEARCH_URL
+              value: http://msa-es:9200
+            - name: ES_CREDENTIALS
+              value: c3VwZXJ1c2VyOnheWnl1R002fnU9K2ZZMkc=
+          image: openmsa/openmsa:msa2-kibana-2.6.0GA-889ad77f59c794d151f489a5bcbf3c13023d1ca4
+          name: msa-kibana
+          ports:
+            - containerPort: 5601
+          resources: {}
+      restartPolicy: Always
+status: {}

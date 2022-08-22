@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObjectDefinition>
+	<information>
+    <allowLaunchOnFailedProcess>true</allowLaunchOnFailedProcess>
+    <description/>
+    <displayField>fw_name</displayField>
+    <executionDetailsVisibility>5</executionDetailsVisibility>
+    <executionMode>AUTOCOMMIT</executionMode>
+    <group>Default</group>
+    <icon>/images/eclipseIcons/page_obj.gif</icon>
+    <name>Sample Firewall</name>
+    <order>10000</order>
+    <poolId>0</poolId>
+    <readVariableVisibility>5</readVariableVisibility>
+    <serviceTaskType>php</serviceTaskType>
+    <showDetailedServiceInstances>true</showDetailedServiceInstances>
+    <showProcessExecConsole>true</showProcessExecConsole>
+    <showVariables>true</showVariables>
+    <visibility>5</visibility>
+  </information>
+	<variables frozen="0">
+    <variable displayName="Firewall name" displayOrder="0" isMandatory="true" maxLength="100" name="params.fw_name" startIncrement="0" type="String"/>
+    <variable default="1" displayName="Wait (s)" displayOrder="1" maxLength="100" name="params.sleep" refServiceURI="Process/Reference/Sample/Firewall" startIncrement="0" type="String"/>
+    <variable displayCols="4" displayName="DeviceID" displayOrder="2" displayType="alt" keepOnImport="true" maxLength="165" name="params.device.0.id" startIncrement="0" type="Device">
+      <sections>
+        <section>Devices</section>
+      </sections>
+    </variable>
+    <variable displayName="Index" displayOrder="3" maxLength="100" name="params.update.0.index" startIncrement="0" type="String">
+      <sections>
+        <section>Update</section>
+      </sections>
+    </variable>
+    <variable default="DENY" displayName="Action" displayOrder="4" editable="false" maxLength="100" name="params.update.0.action" startIncrement="0" type="String">
+      <values>
+        <value displayValue="Deny">DENY</value>
+        <value displayValue="Allow">ALLOW</value>
+      </values>
+      <sections>
+        <section>Update</section>
+      </sections>
+    </variable>
+    <variable displayName="Index" displayOrder="5" isMandatory="true" isUserLocked="true" maxLength="100" name="params.permit.0.index" type="AutoIncrement">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable default="DENY" displayName="Action" displayOrder="6" editable="false" isMandatory="true" maxLength="100" name="params.permit.0.action" startIncrement="0" type="String">
+      <values>
+        <value displayValue="Allow">ALLOW</value>
+        <value displayValue="Deny">DENY</value>
+      </values>
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="Protocole" displayOrder="7" maxLength="100" name="params.permit.0.protocol" startIncrement="0" type="String">
+      <values>
+        <value>IP</value>
+        <value>ICMP</value>
+        <value>UDP</value>
+        <value>TCP</value>
+      </values>
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="Source address" displayOrder="8" maxLength="100" name="params.permit.0.source_ip" startIncrement="0" type="IpAddress">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="Source mask" displayOrder="9" maxLength="100" name="params.permit.0.source_mask" startIncrement="0" type="IpMask">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="WAN IP" displayOrder="10" maxLength="100" name="params.permit.0.wan_ip" startIncrement="0" type="IpAddress">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="Incoming port" displayOrder="11" maxLength="100" name="params.permit.0.incoming_port" startIncrement="0" type="Integer">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="LAN IP" displayOrder="12" maxLength="100" name="params.permit.0.lan_ip" startIncrement="0" type="IpAddress">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="Redirect port" displayOrder="13" maxLength="100" name="params.permit.0.redirect_port" startIncrement="0" type="Integer">
+      <sections>
+        <section>Rule</section>
+      </sections>
+    </variable>
+    <variable displayName="A" displayOrder="14" maxLength="100" name="params.a" startIncrement="0" type="String" visible="false">
+      <sections>
+        <section>P1</section>
+      </sections>
+    </variable>
+    <variable displayName="B" displayOrder="15" maxLength="100" name="params.b" startIncrement="0" type="String" visible="false">
+      <sections>
+        <section>P2</section>
+      </sections>
+    </variable>
+    <variable displayName="C" displayOrder="16" maxLength="100" name="params.c" startIncrement="0" type="String" visible="false">
+      <sections>
+        <section>P3</section>
+      </sections>
+    </variable>
+  </variables>
+	<example>
+		<content/>
+	</example>
+	<process name="Process/Reference/Sample/Process_createfirewall">
+		<icon/>
+		<visibility>5</visibility>
+		<allowSchedule>false</allowSchedule>
+		<displayName>Create Firewall</displayName>
+		<type>SET</type>
+
+		<task name="Task_CreateFW1.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_createfirewall/Tasks
+			</processPath>
+			<displayName>CreateFW1</displayName>
+		</task>
+		<compensation/>
+	</process>
+	<process name="Process/Reference/Sample/Process_attach_detach_devices">
+		<icon/>
+		<visibility>5</visibility>
+		<allowSchedule>false</allowSchedule>
+		<displayName>Attach/detach device(s)</displayName>
+		<type>UPDATE</type>
+		<task name="Task_UpdateDevice1.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_attach_detach_devices/Tasks
+			</processPath>
+			<displayName>UpdateDevices1</displayName>
+		</task>
+		<compensation/>
+	</process>
+	<process name="Process/Reference/Sample/Process_update_policy">
+		<icon/>
+		<visibility>5</visibility>
+		<allowSchedule>true</allowSchedule>
+		<displayName>Update policy</displayName>
+		<type>UPDATE</type>
+		<task name="Task_UpdatePolicy1.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_update_policy/Tasks
+			</processPath>
+			<displayName>UpdatePolicy1</displayName>
+		</task>
+		<compensation/>
+	</process>
+	<process name="Process/Reference/Sample/Process_delete_firewall">
+		<icon/>
+		<visibility>5</visibility>
+		<allowSchedule>true</allowSchedule>
+		<displayName>Delete firewall</displayName>
+		<type>DELETE</type>
+		<task name="Task_Delete.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_delete_firewall/Tasks/
+			</processPath>
+			<displayName>Delete</displayName>
+		</task>
+		<compensation/>
+	</process>
+	<process name="Process/Reference/Sample/Process_perf_testing">
+		<icon/>
+		<visibility>5</visibility>
+		<allowSchedule>true</allowSchedule>
+		<displayName>perf testing</displayName>
+		<type>UPDATE</type>
+		<task name="Task_P1.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_perf_testing/Tasks/
+			</processPath>
+			<displayName>P1</displayName>
+		</task>
+		<task name="Task_P2.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_perf_testing/Tasks/
+			</processPath>
+			<displayName>P2</displayName>
+		</task>
+		<task name="Task_P3.php">
+			<processPath>/opt/fmc_repository/Process/Reference/Sample/Process_perf_testing/Tasks/
+			</processPath>
+			<displayName>P3</displayName>
+		</task>
+		<compensation/>
+	</process>
+</ObjectDefinition>

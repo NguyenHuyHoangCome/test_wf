@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-monitoring
+  name: msa-monitoring
+spec:
+  ports:
+    - name: "162"
+      port: 162
+      targetPort: 162
+  selector:
+    io.kompose.service: msa-monitoring
+status:
+  loadBalancer: {}

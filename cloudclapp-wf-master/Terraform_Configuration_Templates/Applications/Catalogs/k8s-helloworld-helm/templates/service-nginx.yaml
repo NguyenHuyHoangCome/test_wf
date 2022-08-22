@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name}}-front-end-svc
+  labels:
+    k8s-app: nginx
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: {{ .Values.ext_port }}
+    protocol: TCP
+  selector:
+    k8s-app: nginx

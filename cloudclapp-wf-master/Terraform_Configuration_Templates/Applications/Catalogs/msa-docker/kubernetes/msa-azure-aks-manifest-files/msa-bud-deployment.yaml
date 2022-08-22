@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-bud
+  name: msa-bud
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-bud
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-bud
+    spec:
+      containers:
+        - image: openmsa/openmsa:msa2-bud-2.6.0GA-7fa39b2f94a5f6dcb2190e3f680dcb8fc76992af
+          livenessProbe:
+            exec:
+              command:
+                - /etc/init.d/ubi-bud status | grep -q 'service seems UP' || exit 1
+          name: msa-bud
+          ports:
+            - containerPort: 28170
+          resources: {}
+          volumeMounts:
+            - mountPath: /opt/bud/logs/
+              name: msa-bud-logs
+      restartPolicy: Always
+      volumes:
+        - name: msa-bud-logs
+          persistentVolumeClaim:
+            claimName: msa-bud-logs
+status: {}

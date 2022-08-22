@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name}}-back-end-svc
+  labels:
+    k8s-app: python
+spec:
+  type: ClusterIP
+  ports:
+  - port: {{ .Values.py_port }}
+    protocol: TCP
+  selector:
+    k8s-app: python

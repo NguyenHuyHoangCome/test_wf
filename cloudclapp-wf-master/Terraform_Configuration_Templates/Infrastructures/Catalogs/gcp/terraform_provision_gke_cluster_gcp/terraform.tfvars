@@ -1,0 +1,7 @@
+gke_num_nodes = ""
+project_id = ""
+region     = ""
+vpc_name = ""
+subnet_name = ""
+cluster_name = ""
+ip_cidr_range = ""

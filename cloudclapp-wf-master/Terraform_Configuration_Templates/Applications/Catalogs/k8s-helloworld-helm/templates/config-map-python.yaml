@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cmap-py
+  labels:
+    k8s-app: python
+data:
+  main.py: |-
+{{ tpl (.Files.Get "files/main.py") . | indent 4 }}

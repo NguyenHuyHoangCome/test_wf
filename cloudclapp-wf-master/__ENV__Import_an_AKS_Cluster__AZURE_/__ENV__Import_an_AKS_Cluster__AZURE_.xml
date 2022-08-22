@@ -1,0 +1,51 @@
+<ObjectDefinition>
+  <variables frozen="0">
+    <variable displayName="src_dir" name="params.src_dir" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" default="null" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="tf_object_addr" name="params.tf_object_addr" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" default="null" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="tf_object_id" name="params.tf_object_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" default="null" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="" name="params." startIncrement="0" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example/>
+  <process name="Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_IMPORT">
+    <displayName>IMPORT</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_check_source_directory.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_IMPORT/Tasks</processPath>
+      <displayName>check source directory</displayName>
+    </task>
+    <task name="Task_copy_terraform_files.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_IMPORT/Tasks</processPath>
+      <displayName>copy terraform files</displayName>
+    </task>
+    <task name="Task_terraform_init.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_IMPORT/Tasks</processPath>
+      <displayName>terraform init</displayName>
+    </task>
+    <task name="Task_terraform_import.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_IMPORT/Tasks</processPath>
+      <displayName>terraform import</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_REMOVE_FILES">
+    <displayName>REMOVE FILES</displayName>
+    <type>DELETE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_remove_terraform_directory.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/__ENV__Import_an_AKS_Cluster__AZURE_/Process_REMOVE_FILES/Tasks</processPath>
+      <displayName>remove terraform directory</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description/>
+    <displayField>service_id</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name> [ENV] Import an AKS Cluster (AZURE)</name>
+    <group/>
+  </information>
+</ObjectDefinition>

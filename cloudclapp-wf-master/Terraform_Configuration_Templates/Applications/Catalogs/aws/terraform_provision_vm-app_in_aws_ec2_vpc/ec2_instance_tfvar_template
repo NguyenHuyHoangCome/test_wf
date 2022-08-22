@@ -1,0 +1,8 @@
+ec2_instances = [
+{
+aws_ami_id = "ec2_instances.instance_no.aws_ami_id_value"
+aws_instance_type = "ec2_instances.instance_no.aws_instance_type_value"
+aws_instance_name = "ec2_instances.instance_no.aws_instance_name_value"
+}
+]
+

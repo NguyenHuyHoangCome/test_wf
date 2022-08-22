@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-sms
+  name: msa-sms
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-sms
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-sms
+    spec:
+      containers:
+        - env:
+            - name: ES_CREDENTIALS
+              value: c3VwZXJ1c2VyOnheWnl1R002fnU9K2ZZMkc=
+          image: openmsa/openmsa:msa2-sms-2.6.0GA-c3d97a22547be18edbce5568e2093131061bbdfd
+          livenessProbe:
+            exec:
+              command:
+                - /etc/init.d/ubi-sms status | grep -q 'service seems UP' || exit 1
+          name: msa-sms
+          ports:
+            - containerPort: 28165
+            - containerPort: 28169
+            - containerPort: 3690
+            - containerPort: 28172
+          resources: {}
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+          volumeMounts:
+            - mountPath: /opt/devops/
+              name: msa-dev
+            - mountPath: /opt/fmc_entities
+              name: msa-entities
+            - mountPath: /opt/fmc_repository
+              name: msa-repository
+            - mountPath: /opt/sms/logs
+              name: msa-sms-logs
+            - mountPath: /opt/svnroot
+              name: msa-svn
+      restartPolicy: Always
+      volumes:
+        - name: msa-dev
+          persistentVolumeClaim:
+            claimName: msa-dev
+        - name: msa-entities
+          persistentVolumeClaim:
+            claimName: msa-entities
+        - name: msa-repository
+          persistentVolumeClaim:
+            claimName: msa-repository
+        - name: msa-sms-logs
+          persistentVolumeClaim:
+            claimName: msa-sms-logs
+        - name: msa-svn
+          persistentVolumeClaim:
+            claimName: msa-svn
+status: {}

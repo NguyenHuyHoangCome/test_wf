@@ -1,0 +1,79 @@
+<ObjectDefinition>
+  <variables frozen="0">
+    <variable displayName="EKS Cluster Managed Entity (ME)" name="params.env_infrastructure_me" startIncrement="0" type="Device" mandatoryArray="false" visible="false" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="true" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Deployment Name" name="params.deployment_name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Deployment Description" name="params.deployment_desc" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Name" name="params.apps_to_deploy.0.app_name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="150" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Image" name="params.apps_to_deploy.0.app_image" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="120" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Description" name="params.apps_to_deploy.0.short_description" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="350" displayOrder="10" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Version" name="params.apps_to_deploy.0.version" startIncrement="0" type="String" mandatoryArray="false" visible="false" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="8" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Replicas" name="params.apps_to_deploy.0.app_replicas" startIncrement="0" type="Integer" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="90" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="1" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Port" name="params.apps_to_deploy.0.app_port" startIncrement="0" type="Integer" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="110" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Node Port" name="params.apps_to_deploy.0.app_node_port" startIncrement="0" type="Integer" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="120" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Logo" name="params.apps_to_deploy.0.logo_url" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="200" displayOrder="9" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="false" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="true" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="App Access" name="params.apps_to_deploy.0.app_access" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="11" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example/>
+  <process name="Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Generate_Application_WF">
+    <displayName>  New APP deployment</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Create_TF_Workspace.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Generate_Application_WF/Tasks</processPath>
+      <displayName>Create TF Workspace</displayName>
+    </task>
+    <task name="Task_Set_variables_values.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Generate_Application_WF/Tasks</processPath>
+      <displayName>Set variables values</displayName>
+    </task>
+    <task name="Task_Initialize_TF_Workspace.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Generate_Application_WF/Tasks</processPath>
+      <displayName>Initialize TF Workspace</displayName>
+    </task>
+    <task name="Task_Provisioning_Application.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Generate_Application_WF/Tasks</processPath>
+      <displayName>Provisioning Application</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Tear_Down_APP">
+    <displayName>Tear Down APP</displayName>
+    <type>DELETE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Terminate_Application_instance.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Tear_Down_APP/Tasks</processPath>
+      <displayName>Terminate Application instance</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Pause">
+    <displayName>Pause Deployment</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Pause_Deployment.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Pause/Tasks</processPath>
+      <displayName>Pause Deployment</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Resume_Deployment">
+    <displayName>Resume Deployment</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Resume_Deployment.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_Apps_EKS_Cluster/Process_Resume_Deployment/Tasks</processPath>
+      <displayName>Resume Deployment</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description>This workflow allows to provision application in AWS Elastic Kubernetes Service (EKS) cluster based-on terraform configuration.</description>
+    <displayField>service_id</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name>[APP] Provision EKS Apps(AWS)</name>
+    <group>Cloud|APP</group>
+  </information>
+</ObjectDefinition>

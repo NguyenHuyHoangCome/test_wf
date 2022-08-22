@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: linux-me-2
+  name: linux-me-2
+spec:
+  ports:
+    - name: "2225"
+      port: 2225
+      targetPort: 22
+  selector:
+    io.kompose.service: linux-me-2
+status:
+  loadBalancer: {}

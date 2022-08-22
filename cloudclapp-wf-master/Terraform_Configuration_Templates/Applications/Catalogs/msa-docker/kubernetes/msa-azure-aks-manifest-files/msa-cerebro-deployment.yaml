@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-cerebro
+  name: msa-cerebro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-cerebro
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-cerebro
+    spec:
+      containers:
+        - command:
+            - /opt/cerebro/bin/cerebro
+            - -Dhosts.0.host=http://msa-es:9200
+          env:
+            - name: AUTH_TYPE
+              value: basic
+            - name: BASIC_AUTH_PWD
+              value: N@X{M4tfw'5%)+35
+            - name: BASIC_AUTH_USER
+              value: cerebro
+          image: openmsa/openmsa:msa2-cerebro-2.6.0GA-914750e000db1343d9972bfa6652da1efe4aa32f
+          name: msa-cerebro
+          ports:
+            - containerPort: 9000
+          resources: {}
+      restartPolicy: Always
+status: {}

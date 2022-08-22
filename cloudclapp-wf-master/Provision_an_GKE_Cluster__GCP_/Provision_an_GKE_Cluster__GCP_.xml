@@ -1,0 +1,106 @@
+<ObjectDefinition>
+  <variables frozen="0">
+    <variable displayName="GCP Region" name="params.gcp_region" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="us-central1" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="GCP Project Id" name="params.gcp_project_id" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Number of Nodes in GKE Cluster" name="params.gke_num_nodes" startIncrement="0" type="Integer" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="1" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Cluster Name" name="params.cluster_name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="GCP Private Key Id" name="params.gcp_private_key_id" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="GCP Private Key Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_private_key_id" selectorValue="false" startIncrement="0" type="Password"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="GCP Private Key Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_private_key_id" selectorValue="true" startIncrement="0" type="Password"/>
+      </behaviors>
+    </variable>
+    <variable displayName="GCP Private Key" name="params.gcp_private_key" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="GCP Private Key" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_private_key" selectorValue="false" startIncrement="0" type="Password"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="GCP Private Key" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_private_key" selectorValue="true" startIncrement="0" type="Password"/>
+      </behaviors>
+    </variable>
+    <variable displayName="GCP Service Account Email" name="params.gcp_service_account_email" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="GCP Service Account Email" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_service_account_email" selectorValue="false" startIncrement="0" type="String"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="GCP Service Account Email" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_service_account_email" selectorValue="true" startIncrement="0" type="String"/>
+      </behaviors>
+    </variable>
+    <variable displayName="GCP Client Id" name="params.gcp_client_id" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.use_org_cloud_credentials" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="GCP Client Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_client_id" selectorValue="false" startIncrement="0" type="String"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="GCP Client Id" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.gcp_client_id" selectorValue="true" startIncrement="0" type="Password"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Use Organisation Cloud Credentials" name="params.use_org_cloud_credentials" startIncrement="0" type="Boolean" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="true" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Create new VPC" name="params.create_new_vpc" startIncrement="0" type="Boolean" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="true" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="VPC Name" name="params.vpc_name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="Create New Subnet" name="params.create_new_subnet" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.create_new_vpc" displayNameHeader="" fullDisplayName="" isCompositeKey="false" default="true" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="Create New Subnet" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="true" name="params.create_new_subnet" selectorValue="true" startIncrement="0" type="Boolean" default="true"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="Create New Subnet" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.create_new_subnet" selectorValue="false" startIncrement="0" type="Boolean" default="true"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Subnet Name" name="params.subnet_name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="IP Cidr Range" name="params.ip_cidr_range" startIncrement="0" type="Composite" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" selector="params.create_new_subnet" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <behaviors>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="true" displayName="IP Cidr Range" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.ip_cidr_range" selectorValue="true" startIncrement="0" type="String"/>
+        <behaviour arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" editable="false" visible="false" displayName="IP Cidr Range" displayOrder="0" maxLength="0" isMandatory="false" isUserLocked="false" name="params.ip_cidr_range" selectorValue="false" startIncrement="0" type="String"/>
+      </behaviors>
+    </variable>
+    <variable displayName="Status" name="params.cluster_status" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" maxLength="100" displayOrder="14" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isCompositeKey="false" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example/>
+  <process name="Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_New_Fresh_Env">
+    <displayName>New Fresh Env</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Create_Workspace.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_New_Fresh_Env/Tasks</processPath>
+      <displayName>Create Workspace</displayName>
+    </task>
+    <task name="Task_Resolve_Variables.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_New_Fresh_Env/Tasks</processPath>
+      <displayName>Resolve Variables</displayName>
+    </task>
+    <task name="Task_Deploy.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_New_Fresh_Env/Tasks</processPath>
+      <displayName>Deploy</displayName>
+    </task>
+    <task name="Task_Create_GKE_Cluster_ME.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_New_Fresh_Env/Tasks</processPath>
+      <displayName>Create GKE Cluster ME</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_TearDown">
+    <displayName>Tear Down</displayName>
+    <type>DELETE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_TearDown.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_TearDown/Tasks</processPath>
+      <displayName>TearDown</displayName>
+    </task>
+    <task name="Task_Delete_Cluster_ME.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_TearDown/Tasks</processPath>
+      <displayName>Delete Cluster ME</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_Get_Status">
+    <displayName>Get Status</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_get_cluster_status.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_an_GKE_Cluster__GCP_/Process_Get_Status/Tasks</processPath>
+      <displayName>get cluster status</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description>This workflow used to Provision an GKE Cluster in GCP</description>
+    <displayField>service_id</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name>[ENV] Provision an GKE Cluster (GCP)</name>
+    <group/>
+  </information>
+</ObjectDefinition>

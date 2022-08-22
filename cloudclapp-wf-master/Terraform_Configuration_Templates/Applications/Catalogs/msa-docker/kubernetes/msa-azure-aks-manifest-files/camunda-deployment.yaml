@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: camunda
+  name: camunda
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: camunda
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: camunda
+    spec:
+      containers:
+        - env:
+            - name: DB_DRIVER
+              value: org.postgresql.Driver
+            - name: DB_PASSWORD
+              value: camunda
+            - name: DB_URL
+              value: jdbc:postgresql://db:5432/process-engine
+            - name: DB_USERNAME
+              value: camunda
+            - name: DB_VALIDATE_ON_BORROW
+              value: "true"
+            - name: WAIT_FOR
+              value: db:5432
+            - name: WAIT_FOR_TIMEOUT
+              value: "60"
+          image: openmsa/openmsa:msa2-camunda-2.6.0GA-b839a640c1396f27a538c6e633d47ad93796a9e4
+          name: msa-camunda
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}

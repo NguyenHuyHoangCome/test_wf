@@ -1,0 +1,25 @@
+<ObjectDefinition>
+  <variables frozen="0">
+    <variable displayName="name" name="params.name" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="Customer name" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+  </variables>
+  <example/>
+  <process name="Process/CreateCustomer/Create">
+    <displayName>Create</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <task name="Create_Create.py">
+      <processPath>/opt/fmc_repository/Process/CreateCustomer</processPath>
+      <displayName>Create</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description/>
+    <displayField>name</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name>CreateCustomer</name>
+    <group/>
+  </information>
+</ObjectDefinition>

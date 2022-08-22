@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-python
+  labels:
+    k8s-app: python
+spec:
+  containers:
+  - name: python
+    image: n1654/3-tier-app-python:0.1
+    ports:
+    - containerPort: {{ .Values.py_port }}
+    volumeMounts:
+    - name: python-config
+      mountPath: /home/
+  volumes:
+  - name: python-config
+    configMap:
+      name: cmap-py
+      defaultMode: 0755

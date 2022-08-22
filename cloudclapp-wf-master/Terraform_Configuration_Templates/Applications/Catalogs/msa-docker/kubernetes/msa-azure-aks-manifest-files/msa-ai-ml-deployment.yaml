@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-ai-ml
+  name: msa-ai-ml
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-ai-ml
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-ai-ml
+    spec:
+      containers:
+        - image: openmsa/openmsa:msa2-ai-ml-2.6.0GA-63c7fab8c111b6cc85da049f45ebc6175a9b269a
+          livenessProbe:
+            exec:
+              command:
+                - python /msa_proj/health_check.py
+          name: msa-ai-ml
+          ports:
+            - containerPort: 8000
+          resources: {}
+          volumeMounts:
+            - mountPath: /msa_proj/database
+              name: msa-ai-ml-db
+      restartPolicy: Always
+      volumes:
+        - name: msa-ai-ml-db
+          persistentVolumeClaim:
+            claimName: msa-ai-ml-db
+status: {}

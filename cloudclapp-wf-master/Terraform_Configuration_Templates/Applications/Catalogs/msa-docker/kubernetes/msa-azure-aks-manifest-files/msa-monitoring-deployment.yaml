@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-monitoring
+  name: msa-monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-monitoring
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-monitoring
+    spec:
+      containers:
+        - env:
+            - name: ES_CREDENTIALS
+              value: c3VwZXJ1c2VyOnheWnl1R002fnU9K2ZZMkc=
+          image: openmsa/openmsa:msa2-monitoring-2.6.0GA-4e6ef663e040933be108bc71627799134bda7d0b
+          livenessProbe:
+            exec:
+              command:
+                - /etc/init.d/ubi-poll status | grep -q 'service seems UP' || exit 1
+          name: msa-monitoring
+          ports:
+            - containerPort: 162
+          resources: {}
+          volumeMounts:
+            - mountPath: /opt/devops/
+              name: msa-dev
+            - mountPath: /opt/fmc_entities
+              name: msa-entities
+            - mountPath: /opt/fmc_repository
+              name: msa-repository
+            - mountPath: /opt/rrd
+              name: rrd-repository
+            - mountPath: /opt/sms/spool/parser
+              name: msa-bulkfiles
+            - mountPath: /opt/sms/logs
+              name: msa-sms-logs
+      restartPolicy: Always
+      volumes:
+        - name: msa-dev
+          persistentVolumeClaim:
+            claimName: msa-dev
+        - name: msa-entities
+          persistentVolumeClaim:
+            claimName: msa-entities
+        - name: msa-repository
+          persistentVolumeClaim:
+            claimName: msa-repository
+        - name: rrd-repository
+          persistentVolumeClaim:
+            claimName: rrd-repository
+        - name: msa-bulkfiles
+          persistentVolumeClaim:
+            claimName: msa-bulkfiles
+        - name: msa-sms-logs
+          persistentVolumeClaim:
+            claimName: msa-sms-logs
+status: {}

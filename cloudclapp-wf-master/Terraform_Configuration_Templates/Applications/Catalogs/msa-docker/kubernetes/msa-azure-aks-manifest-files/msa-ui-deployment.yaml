@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-ui
+  name: msa-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-ui
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-ui
+    spec:
+      containers:
+        - env:
+            - name: FEATURE_ADMIN
+              value: "true"
+            - name: FEATURE_AI_ML
+              value: "true"
+            - name: FEATURE_ALARMS
+              value: "true"
+            - name: FEATURE_CONNECTION_STATUS
+              value: "true"
+            - name: FEATURE_LICENCE
+              value: "true"
+            - name: FEATURE_MONITORING_PROFILES
+              value: "true"
+            - name: FEATURE_PERMISSION_PROFILES
+              value: "true"
+            - name: FEATURE_PROFILE_AUDIT_LOGS
+              value: "true"
+            - name: FEATURE_SCHEDULE_WORKFLOWS
+              value: "true"
+            - name: FEATURE_TOPOLOGY
+              value: "true"
+            - name: FEATURE_WORKFLOW_OWNER
+              value: "false"
+          image: openmsa/openmsa:msa2-ui-2.6.0GA-493a8f2cd64667cca1b26989d140bbf9c0fd295a
+          livenessProbe:
+            exec:
+              command:
+                - curl --fail http://localhost:8080
+          name: msa-ui
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}

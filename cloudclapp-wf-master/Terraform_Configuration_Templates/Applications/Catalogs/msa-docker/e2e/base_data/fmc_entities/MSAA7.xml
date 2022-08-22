@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ConfigurationMap>
+	<Process>
+		<entry>
+			<key>Process/Reference/Sample/Firewall.xml</key>
+			<value>Process/Reference/Sample/Firewall.xml</value>
+		</entry>
+		<entry>
+			<key>Process/Reference/SampleTestWF/SampleTestWF.xml</key>
+			<value>Process/Reference/SampleTestWF/SampleTestWF.xml</value>
+		</entry>
+	</Process>
+</ConfigurationMap>

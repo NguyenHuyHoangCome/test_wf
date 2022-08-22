@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-front
+  name: msa-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-front
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-front
+    spec:
+      containers:
+        # - image: openmsa/openmsa:msa2-front-2.6.0GA-9b183b03ab1a26f09e981780f57605a609e56f40
+        - image: n1654/msa2-front-2.6.0ga-k8s-clapp:v0.3
+          livenessProbe:
+            exec:
+              command:
+                - curl -k --fail https://localhost
+          name: msa-front
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+            - containerPort: 514
+              protocol: UDP
+            - containerPort: 162
+              protocol: UDP
+            - containerPort: 69
+              protocol: UDP
+            - containerPort: 5200
+              protocol: UDP
+          resources: {}
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,9 @@
+#!/bin/bash
+IMAGE_NAME="$1"
+IMAGE_TAG="$2"
+
+sed -i "s,$IMAGE_NAME:.\+$,$IMAGE_NAME:$IMAGE_TAG," docker-compose.yml
+sed -i "s,$IMAGE_NAME:.\+$,$IMAGE_NAME:$IMAGE_TAG," docker-compose.e2e.yml
+sed -i "s,$IMAGE_NAME:.\+$,$IMAGE_NAME:$IMAGE_TAG," docker-compose.debug.yml
+sed -i "s,$IMAGE_NAME:.\+$,$IMAGE_NAME:$IMAGE_TAG," docker-compose.ha.yml
+sed -i "s,$IMAGE_NAME:.\+$,$IMAGE_NAME:$IMAGE_TAG," docker-compose.simple.ha.yml

@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-sms
+  name: msa-sms
+spec:
+  ports:
+    - name: "28165"
+      port: 28165
+      targetPort: 28165
+    - name: "28169"
+      port: 28169
+      targetPort: 28169
+    - name: "3690"
+      port: 3690
+      targetPort: 3690
+    - name: "28172"
+      port: 28172
+      targetPort: 28172
+  selector:
+    io.kompose.service: msa-sms
+status:
+  loadBalancer: {}

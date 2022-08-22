@@ -1,0 +1,3 @@
+py_port: 5000
+url_path: /my-app-2
+ext_port: 30301

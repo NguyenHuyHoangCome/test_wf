@@ -1,0 +1,109 @@
+<ObjectDefinition>
+  <variables frozen="0">
+    <variable displayName="Descriptor" name="params.descriptor" startIncrement="0" type="String" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" default="/opt/fmc_repository/Datafiles/CCLA/Desciptors/description.json" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false"/>
+    <variable displayName="tf_device_id" name="params.tf_device_id" startIncrement="0" type="Device" mandatoryArray="false" visible="true" description="" groupSeparator="" groupDisplayName="" displayOrder="0" increment="0" refServiceURI="" keepOnImport="false" editable="false" onlyDetailView="false" localVarNameMatch="" remoteVarNameMatch="" arrayCanAdd="true" arrayCanRemove="true" arrayCanMove="true" arrayCanEdit="true" displayNameHeader="" fullDisplayName="" default="ClO151" isMandatory="false" isUserLocked="false" isGrouped="false" isSearchable="false" isUniqueGlobal="false">
+      <sdTypes>
+        <sdTypes manId="2132021" modId="2032021"/>
+      </sdTypes>
+    </variable>
+  </variables>
+  <example/>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF">
+    <displayName>  New APP deployment</displayName>
+    <type>CREATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Read_environment_and_artifacts_descriptor.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF/Tasks</processPath>
+      <displayName>Read environment and artifacts descriptor</displayName>
+    </task>
+    <task name="Task_Read_Application_description.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF/Tasks</processPath>
+      <displayName>Read Application description</displayName>
+    </task>
+    <task name="Task_Define_Appplication_with_Terraform_Resources.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF/Tasks</processPath>
+      <displayName>Define Appplication with Terraform Resources</displayName>
+    </task>
+    <task name="Task_Provision_Application_Copy_Terraform_workspace.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF/Tasks</processPath>
+      <displayName>Copy files from the MSA to the Terraform Server</displayName>
+    </task>
+    <task name="Task_Provision_Application__Initialize_Terraform_workspace.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF/Tasks</processPath>
+      <displayName>Provision Application: Initialize Terraform workspace</displayName>
+    </task>
+    <task name="Task_Provision_Application.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_generate_Infrastructure_WF/Tasks</processPath>
+      <displayName>Provision Application</displayName>
+    </task>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Generate_Application_WF">
+    <displayName>Restart APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Resume_APP">
+    <displayName>Resume APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Pause_APP">
+    <displayName>Pause APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Backup_APP">
+    <displayName>Backup APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Restore_APP">
+    <displayName>Restore APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Upgrade_APP">
+    <displayName>Upgrade APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Scale_APP">
+    <displayName>Scale APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Tear_Down_APP">
+    <displayName>Tear Down APP</displayName>
+    <type>UPDATE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+  </process>
+  <process name="Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Delete_Service">
+    <displayName>Delete Service</displayName>
+    <type>DELETE</type>
+    <visibility>5</visibility>
+    <allowSchedule/>
+    <task name="Task_Delete_service.py">
+      <processPath>/opt/fmc_repository/Process/cloudclapp-wf/Provision_a_DOCKER_Apps__VM_/Process_Delete_Service/Tasks</processPath>
+      <displayName>Delete service</displayName>
+    </task>
+  </process>
+  <information>
+    <icon/>
+    <description>This workflow allows to generate and/or provision Azure Kubernetes Service (AKS) cluster(s) and containerized applications on Azure.</description>
+    <displayField>service_id</displayField>
+    <serviceTaskType>python</serviceTaskType>
+    <order>10000</order>
+    <visibility>5</visibility>
+    <name>[APP] Provision a Docker container-based Apps (VM)</name>
+    <group>Cloud|APP</group>
+  </information>
+</ObjectDefinition>

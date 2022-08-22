@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.24.0 (4a2a0458)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: msa-dev
+  name: msa-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: msa-dev
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.24.0 (4a2a0458)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/quickstart-default: "true"
+        io.kompose.service: msa-dev
+    spec:
+      containers:
+#        - image: openmsa/openmsa:msa2-linuxdev-2.6.0GA-8f580df6480d41bf92f7a88085f4293ee03f14f4
+        - image: openmsa/openmsa:msa2-linuxdev-2.6.0GA-45143c559356b78057e77e101488de07dacb7dcd
+          name: msa-dev
+          ports:
+            - containerPort: 22
+          resources: {}
+          volumeMounts:
+            - mountPath: /opt/fmc_entities
+              name: msa-entities
+            - mountPath: /opt/fmc_repository
+              name: msa-repository
+            - mountPath: /opt/devops/
+              name: msa-dev
+      restartPolicy: Always
+      volumes:
+        - name: msa-entities
+          persistentVolumeClaim:
+            claimName: msa-entities
+        - name: msa-repository
+          persistentVolumeClaim:
+            claimName: msa-repository
+        - name: msa-dev
+          persistentVolumeClaim:
+            claimName: msa-dev
+status: {}
